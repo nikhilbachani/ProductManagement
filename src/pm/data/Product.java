@@ -23,7 +23,7 @@ import static java.math.RoundingMode.HALF_UP;
  * {@code Product} class represents properties and behaviors of a product in
  * Product Management System.
  * <br>
- * Each product has an id, a name, and a price
+ * Each product has an id, a name, a price, and a rating
  * <br>
  * Each product can have a discount calculated based on a
  * {@link DISCOUNT_RATE discount rate}
@@ -44,6 +44,7 @@ public class Product {
     private int id;
     private String name;
     private BigDecimal price;
+    private Rating rating;
 
     public int getId() {
         return id;
@@ -68,6 +69,10 @@ public class Product {
     public void setPrice(final BigDecimal price) {
         // price = BigDecimal.ONE;
         this.price = price;
+    }
+
+    public Rating getRating() {
+        return rating;
     }
 
     /**
