@@ -16,26 +16,16 @@
  */
 package pm.data;
 
+import java.math.BigDecimal;
+
 /**
  * @version 1.0
  * @author nikhilbachani
  */
-public enum Rating {
-    NOT_RATED("\u2606\u2606\u2606\u2606\u2606"),
-    ONE_STAR("\u2605\u2606\u2606\u2606\u2606"),
-    TWO_STAR("\u2605\u2605\u2606\u2606\u2606"),
-    THREE_STAR("\u2605\u2605\u2605\u2606\u2606"),
-    FOUR_STAR("\u2605\u2605\u2605\u2605\u2606"),
-    FIVE_STAR("\u2605\u2605\u2605\u2605\u2605");
+public class Drink extends Product {
 
-    private String stars;
-
-    private Rating(String stars) {
-        this.stars = stars;
+    public Drink(int id, String name, BigDecimal price, Rating rating) {
+        super(id, name, price, rating);
     }
-
-    public String getStars() {
-        return stars;
-    }
-
+    
 }

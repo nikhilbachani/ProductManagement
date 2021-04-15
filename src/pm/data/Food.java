@@ -16,26 +16,29 @@
  */
 package pm.data;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 /**
  * @version 1.0
  * @author nikhilbachani
  */
-public enum Rating {
-    NOT_RATED("\u2606\u2606\u2606\u2606\u2606"),
-    ONE_STAR("\u2605\u2606\u2606\u2606\u2606"),
-    TWO_STAR("\u2605\u2605\u2606\u2606\u2606"),
-    THREE_STAR("\u2605\u2605\u2605\u2606\u2606"),
-    FOUR_STAR("\u2605\u2605\u2605\u2605\u2606"),
-    FIVE_STAR("\u2605\u2605\u2605\u2605\u2605");
+public class Food extends Product {
 
-    private String stars;
+    private LocalDate bestBefore;
 
-    private Rating(String stars) {
-        this.stars = stars;
+    public Food(int id, String name, BigDecimal price, Rating rating, LocalDate bestBefore) {
+        super(id, name, price, rating);
+        this.bestBefore = bestBefore;
     }
 
-    public String getStars() {
-        return stars;
+    /**
+     * Get the value of the best before date for the product
+     *
+     * @return the value of bestBefore
+     */
+    public LocalDate getBestBefore() {
+        return bestBefore;
     }
 
 }
