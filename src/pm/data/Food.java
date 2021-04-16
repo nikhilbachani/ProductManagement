@@ -37,6 +37,7 @@ public class Food extends Product {
      *
      * @return the value of bestBefore
      */
+    @Override
     public LocalDate getBestBefore() {
         return bestBefore;
     }
@@ -48,8 +49,7 @@ public class Food extends Product {
     }
 
     @Override
-    public String toString() {
-        return super.toString() + ", " + bestBefore;
+    public Product applyRating(Rating newRating) {
+        return new Food(getId(), getName(), getPrice(), newRating, bestBefore);
     }
-
 }
