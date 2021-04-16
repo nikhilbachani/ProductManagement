@@ -49,15 +49,11 @@ public abstract class Product {
     private final BigDecimal price;
     private final Rating rating;
 
-    public Product() {
-        this(0, "No name", BigDecimal.ZERO);
-    }
-
-    public Product(int id, String name, BigDecimal price) {
+    Product(int id, String name, BigDecimal price) {
         this(id, name, price, NOT_RATED);
     }
 
-    public Product(int id, String name, BigDecimal price, Rating rating) {
+    Product(int id, String name, BigDecimal price, Rating rating) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -98,7 +94,7 @@ public abstract class Product {
     public LocalDate getBestBefore() {
         return LocalDate.now();
     }
-    
+
     public abstract Product applyRating(Rating newRating);
 
     @Override
