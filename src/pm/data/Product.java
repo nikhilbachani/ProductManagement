@@ -34,7 +34,7 @@ import static pm.data.Rating.*;
  * @version 1.0
  * @author nikhilbachani
  */
-public abstract class Product {
+public abstract class Product implements Rateable<Product>{
 
     /**
      * A constant that defines a {@link java.math.BigDecimal} value of the
@@ -72,6 +72,7 @@ public abstract class Product {
         return price;
     }
 
+    @Override
     public Rating getRating() {
         return rating;
     }
@@ -94,8 +95,6 @@ public abstract class Product {
     public LocalDate getBestBefore() {
         return LocalDate.now();
     }
-
-    public abstract Product applyRating(Rating newRating);
 
     @Override
     public String toString() {
